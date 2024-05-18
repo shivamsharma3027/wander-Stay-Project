@@ -1,0 +1,35 @@
+<footer>
+  <div class="f-info">
+    <div class="f-info-socials">
+      <a href="https://m.facebook.com/login" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://www.instagram.com/accounts/login/" target="_blank"><i class="fa-brands fa-square-instagram"></i></i></a>
+      <a href="https://www.linkedin.com/login" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      
+      
+    </div>
+    <div> &copy;Wonderlust Private Limited</div>
+  <div class="f-info-links">
+    <a href="/privacy_footer">Privacy</a>
+    <a href="/privacy_footer">Terms</a>
+  </div>
+  </div>
+  
+
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const themeSwitch = document.getElementById('theme-switcher');
+    const themeStylesheet = document.getElementById('theme-stylesheet');
+
+    // Load the initial theme from localStorage if available
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    themeStylesheet.href = currentTheme === 'dark' ? '/css/darkStyle.css' : '/css/lightStyle.css';
+    themeSwitch.checked = currentTheme === 'dark';
+
+    themeSwitch.addEventListener('change', () => {
+      const newTheme = themeSwitch.checked ? 'dark' : 'light';
+      themeStylesheet.href = newTheme === 'dark' ? '/css/darkStyle.css' : '/css/lightStyle.css';
+      localStorage.setItem('theme', newTheme);
+    });
+  });
+</script>

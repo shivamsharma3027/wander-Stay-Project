@@ -1,0 +1,81 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row">
+  <div class="col-8 offset-2">
+ <br>
+ <h3>Edit your Listing</h3>
+ <br>
+  <form action="/listings/<%= listing._id %>?_method=PUT" method="POST" enctype="multipart/form-data" novalidate  class="needs-validation">
+    
+    <div class="mb-3">
+      <label class="form-label" for="title">Title</label>
+      <input class="form-control" type="text" name="listing[title]" placeholder="title" required value="<%= listing.title ? listing.title : '' %>">
+      <div class="valid-feedback"> Title looks cool!</div>
+      <div class="invalid-feedback">Please provide the title!</div>
+    </div>
+
+
+    <div class="mb-3">
+      <label class="form-label" for="description">Description</label>
+      <textarea class="form-control" required name="listing[description]" placeholder="description"><%= listing.description ? listing.description : '' %></textarea>
+      <div class="invalid-feedback">Please enter the description!</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="dropdown">Update a Category:</label>
+      &nbsp; &nbsp;&nbsp;
+      <select id="dropdown" class="btn " style="background-color: #ebe8e8; 
+      color: #000; " name="listing[category]">
+      <option value="" disabled selected><%= listing.category %></option>
+      <hr>
+      <option  value="trending">trending</option>
+      <option value="iconic-cities">iconic-cities</option>
+      <option value="rooms">rooms</option>
+      <option value="mountains">mountains</option>
+      <option value="farms">farms</option>
+      <option value="campings">campings</option>
+      <option value="pools">pools</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      Original Listing Image <br>
+      <img style="border-radius: 20px; height: 200px; width: 200px; margin-top: 10px;" src="<%=listing.image.url%>" >
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label" for="image"> Upload New Image</label>
+      <input class="form-control"  type="file" name="listing[image]" >
+      
+    </div>
+
+    <div class="row">
+
+      <div class="mb-3 col-md-4">
+        <label class="form-label" for="price">Price</label>
+        <input class="form-control" required  name="listing[price]" placeholder="price" value="<%= listing.price ? listing.price : '' %>">
+        <div class="invalid-feedback">Please enter valid price!</div>
+      </div>
+  
+  
+      <div class="mb-3 col-md-8">
+        <label class="form-label" for="country">Country</label>
+        <input class="form-control" type="text" required name="listing[country]" placeholder="country" value="<%= listing.country ? listing.country : '' %>">
+        <div class="invalid-feedback">Please provide the country info</div>
+      </div>
+    </div>
+
+
+    <div class="mb-3">
+      <label class="form-label" for="location">Location</label>
+      <input class="form-control" required type="text" name="listing[location]" placeholder="location" value="<%= listing.location ? listing.location : '' %>">
+      <div class="invalid-feedback">Please enter the location </div>
+      
+    </div>
+    
+    <br><br>
+    
+ <button class=" edit-btn btn btn-dark mb-3">Update Listing</button>
+</form>
+</div>
+</div>
+
