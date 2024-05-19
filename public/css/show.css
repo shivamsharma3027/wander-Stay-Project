@@ -1,0 +1,144 @@
+/* Ensure the container and elements are responsive */
+.container-fluid {
+  padding: 15px;
+}
+
+/* Responsive typography */
+h1, h4 {
+  font-size: 2rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+/* Card styles */
+.card {
+  margin-bottom: 1rem;
+}
+
+.card-img-top {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+/* Button styles */
+.btn {
+  margin: 5px 0;
+}
+
+/* Form styles */
+form {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+  .col-8.offset-3, .col-6.offset-3, .col-5.ms-3.mb-3 {
+    margin-left: 0 !important;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
+  h1, h4 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-label, .form-control, .btn-outline-dark {
+    width: 100%;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  .review-card {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .col-8.offset-3, .col-6.offset-3, .col-5.ms-3.mb-3 {
+    margin-left: 1.5rem !important;
+    max-width: 85%;
+    flex: 0 0 85%;
+  }
+
+  h1, h4 {
+    font-size: 1.75rem;
+  }
+
+  .btn {
+    width: auto;
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .form-label, .form-control, .btn-outline-dark {
+    width: auto;
+  }
+
+  textarea {
+    width: auto;
+  }
+
+  .review-card {
+    max-width: 45%;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-8.offset-3, .col-6.offset-3, .col-5.ms-3.mb-3 {
+    margin-left: 2.5rem !important;
+    max-width: 75%;
+    flex: 0 0 75%;
+  }
+
+  h1, h4 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    width: auto;
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .form-label, .form-control, .btn-outline-dark {
+    width: auto;
+  }
+
+  textarea {
+    width: auto;
+  }
+
+  .review-card {
+    max-width: 45%;
+  }
+}
